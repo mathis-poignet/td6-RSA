@@ -18,7 +18,7 @@ public class main {
         byte[] data = chaine.getBytes();
 
         // Création des différentes clés
-        Cipher cipherRSA = Cipher.getInstance("exercice1.RSA");
+        Cipher cipherRSA = Cipher.getInstance("RSA");
         Cipher cipherDES = Cipher.getInstance("DES");
         Key key = Codage.DES();
         byte[] textEncrypted = Codage.codageText(cipherDES, key, data);
