@@ -15,7 +15,7 @@ public class Codage {
         KeyGenerator keyGen = KeyGenerator.getInstance("DES");
         keyGen.init(56); // 56 = valeur imposée
         Key key = keyGen.generateKey();
-        System.out.println("Clé générée : " + new String(key.getEncoded()));
+        System.out.println("Clé DES générée : " + new String(key.getEncoded()));
         return key;
     }
 
