@@ -18,12 +18,12 @@ public class main {
         byte[] data = chaine.getBytes();
 
         // Création des différentes clés
-        Cipher cipherRSA = Cipher.getInstance("RSA");
+        Cipher cipherRSA = Cipher.getInstance("exercice1.RSA");
         Cipher cipherDES = Cipher.getInstance("DES");
         Key key = Codage.DES();
         byte[] textEncrypted = Codage.codageText(cipherDES, key, data);
 
-        // Décodage de la clé DES à avec la clé publique RSA
+        // Décodage de la clé DES à avec la clé publique exercice1.RSA
         Decodage decodage = new Decodage();
         PublicKey publicKey = decodage.createRSA();
         byte[] cipherText = Codage.codageRSA(cipherRSA, publicKey, key);

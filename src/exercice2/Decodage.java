@@ -13,7 +13,7 @@ public class Decodage {
     }
 
     public PublicKey createRSA() throws NoSuchAlgorithmException {
-        KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
+        KeyPairGenerator keyGen = KeyPairGenerator.getInstance("exercice1.RSA");
         keyGen.initialize(1024);
         KeyPair keypair = keyGen.genKeyPair();
         PrivateKey clePrivee = keypair.getPrivate();
