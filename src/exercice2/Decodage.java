@@ -13,6 +13,7 @@ public class Decodage {
     }
 
     public PublicKey createRSA() throws NoSuchAlgorithmException {
+        System.out.println("Création clés RSA ... ");
         KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
         keyGen.initialize(1024);
         KeyPair keypair = keyGen.genKeyPair();
@@ -23,14 +24,17 @@ public class Decodage {
     }
 
     public byte[] decodeRSA(Cipher cipher, byte[] cipherText) throws InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
+        System.out.println("Décodage clé DES ... ");
         cipher.init(Cipher.DECRYPT_MODE, this.privateKey);
         byte[] decryptedKey = cipher.doFinal(cipherText);
+        System.out.println("Clé DES décodée : " + new String(decryptedKey));
         return decryptedKey;
     }
 
     public static void decodePlainText(Cipher cipherText, byte[] textEncrypted, Key decryptKey) throws InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
+        System.out.println("Décodage texte ...");
         cipherText.init(Cipher.DECRYPT_MODE, decryptKey);
         byte[] plainText = cipherText.doFinal(textEncrypted);
-        System.out.println(new String(plainText));
+        System.out.println("Texte décodé : " + new String(plainText));
     }
 }

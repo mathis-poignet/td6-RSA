@@ -6,7 +6,6 @@ import java.security.InvalidKeyException;
 import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
-import java.util.Base64;
 import java.util.Scanner;
 
 public class main {
@@ -23,7 +22,7 @@ public class main {
         Key key = Codage.DES();
         byte[] textEncrypted = Codage.codageText(cipherDES, key, data);
 
-        // Décodage de la clé DES à avec la clé publique exercice1.RSA
+        // Décodage de la clé DES à avec la clé publique RSA
         Decodage decodage = new Decodage();
         PublicKey publicKey = decodage.createRSA();
         byte[] cipherText = Codage.codageRSA(cipherRSA, publicKey, key);
