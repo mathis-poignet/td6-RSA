@@ -15,13 +15,13 @@ public class RSA {
         String chaine = sc.nextLine();
         byte[] data = chaine.getBytes();
         // Génération des deux clés
-        KeyPairGenerator keyGen = KeyPairGenerator.getInstance("exercice1.RSA");
+        KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
         keyGen.initialize(1024);
         KeyPair keypair = keyGen.genKeyPair();
         PrivateKey clePrivee = keypair.getPrivate();
         PublicKey clePublique = keypair.getPublic();
         // Codage exercice1.RSA
-        Cipher cipher = Cipher.getInstance("exercice1.RSA");
+        Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.ENCRYPT_MODE, clePublique);
         byte[] cipherText = cipher.doFinal(data);
         System.out.println("cipher: " + new String(cipherText));
